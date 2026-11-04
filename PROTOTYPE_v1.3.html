@@ -1,0 +1,570 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>GETMAKS360 · Dilim 03 v1.3 — Üyelik, Profesyonel Unvan, İşlem Rolleri ve Sözleşmeler</title>
+<style>
+:root{--bg:#07101f;--panel:#0d1a2e;--panel2:#11233a;--line:#243b57;--text:#edf5ff;--muted:#9db1ca;--cyan:#42e4ee;--gold:#f3c969;--green:#68dfb3;--red:#ff9a9a;--blue:#83baff;--radius:16px}*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 60% -20%,#163253 0,transparent 50%),var(--bg);color:var(--text);font:15px/1.5 Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif}button,input,select{font:inherit}button{cursor:pointer;border:1px solid var(--line);color:var(--text);background:#132741;padding:10px 14px;border-radius:10px;font-weight:700}button:hover{border-color:var(--cyan)}button:disabled{opacity:.35;cursor:not-allowed;filter:saturate(.25)}button:disabled:hover{border-color:var(--line)}button.primary{background:var(--cyan);color:#04202a;border-color:var(--cyan)}button.gold{background:var(--gold);color:#2c2107;border-color:var(--gold)}button.ghost{background:transparent}.shell{max-width:1450px;margin:auto;min-height:100vh;display:grid;grid-template-columns:240px minmax(0,1fr)}aside{border-right:1px solid var(--line);background:#081426;padding:24px 16px;min-height:100vh}.brand{font-weight:900;font-size:20px;letter-spacing:-.5px}.brand span{color:var(--cyan)}.smallcap{font-size:10px;letter-spacing:2px;color:var(--muted);font-weight:800;margin:7px 0 26px}.navtitle{font-size:10px;letter-spacing:1.7px;color:#7087a5;font-weight:800;margin:24px 8px 8px}.nav button{display:block;width:100%;text-align:left;margin:4px 0;background:transparent;border-color:transparent;color:#bfd0e5;font-size:13px}.nav button.active{background:#142943;border-color:#28516b;color:white}.nav button.active:before{content:'● ';color:var(--cyan)}.tag{display:inline-flex;align-items:center;padding:4px 8px;border:1px solid var(--line);border-radius:99px;color:var(--muted);font-size:11px;font-weight:800}.tag.green{color:var(--green);border-color:#276d5b}.tag.gold{color:var(--gold);border-color:#65552e}.tag.cyan{color:var(--cyan);border-color:#27616b}.main{padding:30px clamp(18px,3vw,44px) 60px;min-width:0}.top{display:flex;justify-content:space-between;gap:20px;align-items:flex-start;margin-bottom:26px}.eyebrow{color:var(--cyan);letter-spacing:2px;font-size:11px;font-weight:900;text-transform:uppercase}.top h1{font-size:clamp(26px,3vw,38px);line-height:1.12;margin:8px 0}.lead{color:var(--muted);max-width:800px;margin:0}.userpill{white-space:nowrap;color:#bcd0e7;background:var(--panel);border:1px solid var(--line);border-radius:99px;padding:8px 12px;font-size:12px}.rulebar{display:flex;gap:10px;align-items:flex-start;padding:14px 16px;background:#0b2430;border:1px solid #225867;border-radius:14px;margin-bottom:24px}.rulebar b{color:var(--cyan)}.rulebar p{margin:0;color:#c3d5e5;font-size:13px}.grid2{display:grid;grid-template-columns:1fr 1fr;gap:18px}.card{background:linear-gradient(160deg,#101f34,#0b1729);border:1px solid var(--line);border-radius:var(--radius);padding:20px;min-width:0}.card.selected{border-color:var(--cyan);box-shadow:0 0 0 1px #42e4ee33}.cardhead{display:flex;justify-content:space-between;gap:12px;align-items:flex-start}.icon{display:grid;place-items:center;width:42px;height:42px;border-radius:12px;background:#18364e;color:var(--cyan);font-size:20px;font-weight:900}.card h2{margin:12px 0 4px;font-size:22px}.sub{color:var(--muted);font-size:13px}.path{display:flex;flex-wrap:wrap;gap:7px;align-items:center;margin:18px 0}.node{background:#142841;border:1px solid #294560;border-radius:9px;padding:7px 9px;font-size:12px;font-weight:800}.arr{color:#7292b2}.divider{height:1px;background:var(--line);margin:18px 0}.bullets{padding-left:19px;color:#c2d3e6;margin:12px 0}.bullets li{margin:6px 0}.fieldgrid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.field{display:flex;flex-direction:column;gap:5px}.field label{font-size:12px;font-weight:800;color:#c0d1e4}.field input,.field select{width:100%;background:#07111f;color:var(--text);border:1px solid #2a405a;border-radius:9px;padding:10px 11px;min-width:0}.field input::placeholder{color:#667e9c}.choice{display:flex;gap:8px;flex-wrap:wrap}.choice button{flex:1;min-width:145px}.choice button.on{border-color:var(--cyan);background:#10323f;color:var(--cyan)}.choice button.on.goldon{border-color:var(--gold);background:#342b16;color:var(--gold)}.workflow{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:9px;margin:16px 0}.step{border:1px solid var(--line);border-radius:12px;padding:12px;background:#0a1729;min-height:105px;cursor:pointer}.step:hover{border-color:#4b779b}.step.current{border-color:var(--cyan);background:#0e2a39}.step.done{border-color:#276d5b;background:#0d2828}.num{display:grid;place-items:center;border-radius:8px;width:25px;height:25px;font-size:11px;font-weight:900;background:#203952;color:#c5e5ff;margin-bottom:8px}.step.current .num{background:var(--cyan);color:#03232a}.step.done .num{background:var(--green);color:#052b20}.step b{font-size:12px;display:block}.step small{display:block;color:var(--muted);font-size:11px;margin-top:4px}.detail{margin-top:14px;border:1px solid var(--line);border-radius:14px;padding:18px;background:#0a1727}.detail h3{margin:0 0 6px}.detail p{margin:0;color:#c0d1e4}.detail .foot{display:flex;justify-content:space-between;gap:12px;align-items:center;margin-top:16px}.notice{font-size:12px;color:var(--muted);margin-top:10px}.sectiontitle{display:flex;align-items:center;justify-content:space-between;gap:14px;margin:30px 0 12px}.sectiontitle h2{font-size:20px;margin:0}.matrix{width:100%;border-collapse:collapse;margin-top:12px;font-size:13px}.matrix th,.matrix td{border-bottom:1px solid var(--line);padding:12px;text-align:left;vertical-align:top}.matrix th{color:#91a8c5;font-size:11px;letter-spacing:.6px}.matrix td{color:#d5e2f0}.matrix td:first-child{font-weight:800;color:white}.highlight{color:var(--cyan);font-weight:800}.alfa{color:var(--gold);font-weight:800}.warning{color:#ffd9a3}.bottom{display:flex;justify-content:space-between;align-items:center;gap:14px;margin-top:24px;padding-top:18px;border-top:1px solid var(--line)}.hidden{display:none!important}.toast{position:fixed;bottom:18px;right:18px;max-width:420px;padding:14px 18px;border-radius:12px;background:#10352f;border:1px solid #347d69;color:#dcfff4;box-shadow:0 15px 50px #0007;display:none;z-index:20}.toast.show{display:block}.section{scroll-margin-top:20px}.mini-label{font-size:10px;color:#7892b2;text-transform:uppercase;letter-spacing:1.5px;font-weight:900}.branchbox{border:1px dashed #765f2e;background:#211e15;padding:13px;border-radius:12px;color:#e8d7a8;font-size:12px;margin-top:12px}.frbox{border:1px dashed #286271;background:#0c202b;padding:13px;border-radius:12px;color:#c1eaf0;font-size:12px;margin-top:12px}
+@media(max-width:1050px){.shell{grid-template-columns:190px minmax(0,1fr)}.workflow{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:780px){.shell{display:block}aside{position:sticky;top:0;z-index:10;min-height:auto;padding:12px 14px;border-right:0;border-bottom:1px solid var(--line)}.brand{font-size:17px}.smallcap{margin:2px 0 10px}.navtitle{display:none}.nav{display:flex;gap:5px;overflow:auto;padding-bottom:2px}.nav button{white-space:nowrap;width:auto;flex:0 0 auto;padding:8px 10px;margin:0}.main{padding:22px 14px 40px}.top{display:block}.userpill{display:inline-block;margin-top:12px}.grid2{grid-template-columns:1fr}.workflow{grid-template-columns:1fr 1fr}.fieldgrid{grid-template-columns:1fr}.matrix-wrap{overflow-x:auto}.matrix{min-width:650px}.sectiontitle{align-items:flex-start;flex-direction:column}.bottom{align-items:flex-start;flex-direction:column}}
+@media(max-width:420px){.workflow{grid-template-columns:1fr}.card{padding:16px}.path{align-items:stretch}.node{flex:1;text-align:center}}
+
+.public-name-chip{display:flex;flex-direction:column;gap:4px;margin-top:13px;padding:11px 13px;border-radius:11px;border:1px solid #2c5263;background:#0a202c}
+.public-name-chip span{font-size:10px;color:#8eb1c8;text-transform:uppercase;letter-spacing:1.2px;font-weight:900}
+.public-name-chip strong{font-size:16px;color:#f5fbff;letter-spacing:-.2px}
+.internal-badge{display:inline-flex;align-items:center;gap:6px;border:1px solid #67572e;color:#f3d785;border-radius:99px;padding:5px 9px;font-size:10px;font-weight:900;letter-spacing:.8px;text-transform:uppercase}
+.public-badge{display:inline-flex;align-items:center;gap:6px;border:1px solid #276d5b;color:#87edc9;border-radius:99px;padding:5px 9px;font-size:10px;font-weight:900;letter-spacing:.8px;text-transform:uppercase}
+.naming-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.naming-card{background:linear-gradient(160deg,#101f34,#0b1729);border:1px solid var(--line);border-radius:var(--radius);padding:20px;min-width:0}
+.naming-card h3{font-size:19px;margin:10px 0 4px}
+.naming-card .preview{min-height:145px;display:flex;flex-direction:column;justify-content:center;gap:7px;background:linear-gradient(135deg,#f8fbff,#e8f1f8);color:#17324d;border:1px solid #c7d7e4;border-radius:14px;padding:18px;margin-top:14px}
+.preview .preview-brand{font-size:10px;color:#5b7690;font-weight:900;letter-spacing:1.7px;text-transform:uppercase}
+.preview .preview-name{font-size:clamp(21px,2vw,29px);font-weight:900;letter-spacing:-.8px;line-height:1.15;color:#102d45}
+.preview .preview-meta{font-size:12px;color:#506b83}
+.naming-fields{display:grid;grid-template-columns:1fr 1fr;gap:11px;margin-top:15px}
+.modebar{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0 18px}
+.modebar button{min-width:155px}
+.modebar button.on{background:#10323f;border-color:var(--cyan);color:var(--cyan)}
+.modebar button.on.public-mode{background:#16352d;border-color:var(--green);color:var(--green)}
+.view-state{padding:15px 17px;border:1px solid var(--line);background:#091626;border-radius:12px;color:#c1d3e6;font-size:13px;margin-top:14px}
+.view-state b{color:white}
+.secret-list{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-top:13px}
+.secret-item{border:1px solid var(--line);border-radius:10px;background:#0b1728;padding:11px;font-size:12px;color:#c5d5e7}
+.secret-item strong{display:block;color:#f5fbff;margin-bottom:4px}
+.public-rule{border:1px solid #2a705d;background:#0b2826;color:#cbf4e7;padding:13px 15px;border-radius:12px;font-size:13px;margin-top:15px}
+@media(max-width:900px){.naming-grid{grid-template-columns:1fr}.secret-list{grid-template-columns:1fr 1fr}}
+@media(max-width:520px){.naming-fields,.secret-list{grid-template-columns:1fr}.naming-card{padding:15px}.public-name-chip strong{font-size:15px}}
+
+
+/* Full customer-facing preview: only approved public office names are shown. */
+.public-preview{background:#f1f5f9!important;color:#102d45!important;}
+.public-preview .shell{display:block;max-width:1120px;min-height:100vh;}
+.public-preview aside{display:none!important;}
+.public-preview .main{padding:34px clamp(18px,4vw,44px) 60px;}
+.public-preview .top,.public-preview .rulebar,.public-preview #overview,.public-preview #maximum,.public-preview #alfa,.public-preview #matrix,.public-preview .bottom{display:none!important;}
+.public-preview #public-names>.sectiontitle,.public-preview #public-names>.lead,.public-preview #public-names>.modebar,.public-preview #public-names>#viewModeNotice{display:none!important;}
+.public-preview #public-names{margin-top:0!important;scroll-margin-top:0;}
+.public-preview #publicPreviewHeader{display:block!important;margin:0 0 22px;}
+.public-preview .naming-grid{grid-template-columns:1fr 1fr;gap:18px;}
+.public-preview .naming-card{background:#fff;border:1px solid #d6e3ec;border-radius:18px;padding:22px;box-shadow:0 12px 30px #1536530b;color:#102d45;}
+.public-preview .naming-card h3{font-size:clamp(20px,2.2vw,27px);color:#102d45;line-height:1.2;margin:0;}
+.public-preview .naming-card .sub{color:#597186;font-size:13px;margin-top:8px;}
+.public-preview .naming-card .cardhead{align-items:center;}
+.public-preview .naming-card .icon,.public-preview .naming-card .preview,.public-preview .naming-card .view-state,.public-preview .naming-card .public-rule{display:none!important;}
+.public-preview .naming-card .internal-badge,.public-preview .naming-card .internal-name,.public-preview .naming-card .naming-fields{display:none!important;}
+.public-preview .naming-card .public-name-inline{display:inline!important;color:#102d45;}
+.public-preview .naming-card .public-only{display:block!important;}
+.public-preview #public-names>.naming-grid .naming-card .public-only.hidden{display:block!important;}
+.public-preview #public-names>.naming-grid .naming-card .public-name-inline.hidden{display:inline!important;}
+.public-preview .public-preview-brand{font-size:11px;letter-spacing:1.8px;font-weight:900;color:#52718b;text-transform:uppercase;margin-bottom:12px;}
+.public-preview .public-preview-title{font-size:clamp(28px,4vw,42px);line-height:1.1;letter-spacing:-1.2px;margin:0 0 8px;color:#102d45;}
+.public-preview .public-preview-copy{margin:0;color:#526a80;max-width:700px;}
+.public-preview .return-prototype{margin-top:20px;background:#102e40;color:#fff;border-color:#102e40;}
+@media(max-width:720px){.public-preview .naming-grid{grid-template-columns:1fr}.public-preview .main{padding:24px 14px 36px}.public-preview .naming-card{padding:18px}}
+
+
+/* v1.2: transaction-scoped party roles and contract gates */
+.flow-info{border:1px solid #2a536d;background:#0b2233;border-radius:13px;padding:15px 17px;color:#cfe2f2;margin:12px 0 18px;font-size:13px}
+.flow-info strong{color:var(--cyan)}
+.role-controls,.contract-controls{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:14px 0}
+.role-summary{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:15px 0}
+.role-summary .card{padding:14px}
+.role-summary .card strong{display:block;font-size:13px;margin-bottom:5px}
+.role-summary .card span{font-size:12px;color:var(--muted)}
+.role-flow{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:9px;margin:16px 0}
+.role-stage{background:#0a1729;border:1px solid var(--line);border-radius:12px;padding:12px;min-height:125px}
+.role-stage .num{margin-bottom:9px}
+.role-stage strong{display:block;font-size:12px}
+.role-stage p{font-size:11px;color:var(--muted);margin:6px 0 0}
+.party-table{width:100%;border-collapse:collapse;font-size:13px;margin-top:12px}
+.party-table th,.party-table td{padding:11px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+.party-table th{font-size:10px;letter-spacing:.8px;color:#91a8c5}
+.party-table td:first-child{font-weight:800;color:white;min-width:130px}
+.tag.role{color:#b9dfff;border-color:#315b7e}
+.contract-layout{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(280px,.8fr);gap:16px;align-items:start}
+.contract-list{display:grid;gap:12px}
+.contract-card{border:1px solid var(--line);background:linear-gradient(160deg,#101f34,#0b1729);padding:16px;border-radius:14px}
+.contract-card.locked{opacity:.72;border-style:dashed}
+.contract-card.verified{border-color:#28715e;background:linear-gradient(160deg,#102d2b,#0a1a21)}
+.contract-card h3{font-size:17px;margin:7px 0 4px}
+.contract-meta{color:var(--muted);font-size:12px}
+.contract-status{display:inline-flex;padding:4px 8px;border-radius:999px;font-size:10px;font-weight:900;letter-spacing:.5px;border:1px solid #65552e;color:var(--gold);margin-top:5px}
+.contract-status.verified{border-color:#28715e;color:var(--green)}
+.contract-status.locked{border-color:#42546a;color:#a7b7c8}
+.contract-actions{display:flex;gap:7px;flex-wrap:wrap;margin-top:13px}
+.contract-actions button{font-size:12px;padding:8px 10px}
+.gate-panel{border:1px solid var(--line);background:#091626;border-radius:14px;padding:17px;position:sticky;top:16px}
+.gate-panel h3{margin:0 0 6px}
+.gate-check{display:flex;gap:9px;align-items:flex-start;padding:10px 0;border-bottom:1px solid #1d3148;font-size:12px;color:#cfdeed}
+.gate-check:last-child{border-bottom:0}
+.gate-check input{margin-top:3px;accent-color:var(--cyan)}
+.gate-state{padding:13px;border-radius:11px;margin-top:14px;font-size:12px;border:1px solid #65552e;background:#251f12;color:#ffe5a8}
+.gate-state.ready{border-color:#28715e;background:#0c2925;color:#b8f3dd}
+.progress-track{height:7px;border-radius:999px;background:#1c2c41;overflow:hidden;margin-top:11px}
+.progress-track>div{height:100%;width:0;background:var(--green);transition:width .2s ease}
+.mini-rule{font-size:11px;color:var(--muted);margin-top:9px}
+@media(max-width:1120px){.role-flow{grid-template-columns:repeat(3,minmax(0,1fr))}.contract-layout{grid-template-columns:1fr}.gate-panel{position:static}}
+@media(max-width:780px){.role-controls,.contract-controls,.role-summary{grid-template-columns:1fr}.role-flow{grid-template-columns:1fr 1fr}.party-table-wrap{overflow-x:auto}.party-table{min-width:650px}}
+@media(max-width:460px){.role-flow{grid-template-columns:1fr}.contract-card{padding:13px}.contract-actions button{flex:1}.gate-panel{padding:14px}}
+
+
+/* v1.3: distinguish base membership, prospective customer relationship, professional title and office access */
+.identity-track{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;margin:16px 0}
+.identity-stage{border:1px solid var(--line);border-radius:11px;background:#0a1729;padding:12px;min-width:0}
+.identity-stage strong{display:block;font-size:12px;color:#f4f8ff}
+.identity-stage small{display:block;color:var(--muted);font-size:11px;margin-top:5px}
+.identity-stage .stepnum{font-size:10px;color:var(--cyan);font-weight:900;letter-spacing:1px;margin-bottom:7px}
+.identity-kicker{font-size:10px;letter-spacing:1.4px;text-transform:uppercase;color:var(--cyan);font-weight:900}
+.identity-result{border:1px solid #27616b;border-radius:12px;background:#0b2230;padding:14px 15px;margin-top:14px}
+.identity-result h3{font-size:16px;margin:0 0 6px;color:#fff}
+.identity-result p{margin:0;color:#c5d8ea;font-size:13px}
+.identity-result .mini-rule{margin-top:9px}
+.identity-rule{border-left:3px solid var(--gold);padding:10px 13px;background:#211e15;color:#e7d7ac;border-radius:0 9px 9px 0;font-size:12px;margin-top:13px}
+@media(max-width:980px){.identity-track{grid-template-columns:1fr 1fr}}
+@media(max-width:520px){.identity-track{grid-template-columns:1fr}.identity-result{padding:12px}}
+
+</style>
+</head>
+<body>
+<div class="shell">
+<aside>
+  <div class="brand">GETMAKS<span>360</span></div><div class="smallcap">MARKA · OPERASYON · YAŞAM DÖNGÜSÜ</div>
+  <div class="navtitle">DİLİM 03 · v1.3</div>
+  <nav class="nav" aria-label="Prototip bölümleri">
+    <button class="active" data-target="overview">İki kuruluş yolu</button>
+    <button data-target="identity-lifecycle">Üyelik ve profesyonel unvan</button>
+    <button data-target="public-names">İç model / dış görünüm</button>
+    <button data-target="maximum">MAXIMUM Franchise</button>
+    <button data-target="alfa">ALFA Şubesi</button>
+    <button data-target="matrix">İlişki matrisi</button>
+    <button data-target="transaction-roles">İşlem rolleri</button>
+    <button data-target="contract-gates">Dijital sözleşme akışı</button>
+  </nav>
+  <div class="navtitle">DEMO BAĞLAMI</div>
+  <div class="sub" style="padding:0 8px 10px">Bu menü gerçek yetki vermez; yalnızca tasarım senaryosunu değiştirir.</div>
+  <div class="field" style="padding:0 4px"><label for="demoRole">Örnek kullanıcı</label><select id="demoRole"><option value="brand">GETMAKS Marka yöneticisi</option><option value="franchise">MAXIMUM franchise brokerı</option><option value="branch">ALFA şube yöneticisi olarak atanmış broker</option><option value="consultant">Aktif ofis üyesi danışman</option><option value="member">Standart üye / müşteri</option></select></div>
+</aside>
+<main class="main">
+  <header class="top">
+    <div><div class="eyebrow">YAŞAM DÖNGÜSÜ · DİLİM 03</div><h1>İç işletme modeli ayrı,<br>dış marka görünümü ayrı.</h1><p class="lead">MAXIMUM/ALFA ayrımı, kuruluş kaynağı ve broker ilişkisinin türü GETMAKS’ın iç yönetim modelidir. Nihai müşteri ve kamuya açık vitrinler bu iç sınıflandırmayı görmez; yalnızca onaylı dış marka adını görür.</p></div>
+    <div class="userpill">● Etkileşimli UX prototipi · Demo veri · v1.3</div>
+  </header>
+  <div class="rulebar"><div style="font-size:22px">◆</div><p><b>Değişmez kural</b><br>İçeride kuruluş ve yetki modeli ayrı tutulur; dışarıda kullanıcıya yalnızca ilgili konumun onaylı marka adı gösterilir. MAXIMUM franchise/işletme ilişkisi veya ALFA şube/yönetici ataması kamuya açık ekranlarda ifşa edilmez. Müşteri/üye alanı her zaman korunur. Bu HTML gerçek kayıt veya yetki oluşturmaz.</p></div>
+
+  <section id="identity-lifecycle" class="section internal-only" style="margin-top:28px">
+    <div class="sectiontitle"><h2>Üyelik ve profesyonel unvan yaşam döngüsü</h2><span class="tag cyan">İki ayrı eksen · tek kullanıcı kimliği</span></div>
+    <p class="lead">Üyelik, ticari müşteri ilişkisi, mesleki unvan ve ofis erişimi aynı şey değildir. Her hesap standart Üye olarak başlar; GETMAKS açısından bu hesap potansiyel müşteri havuzundadır. Gayrimenkul profesyoneli ise mesleki sürece kabul edildiğinde Gayrimenkul Danışmanı unvanıyla başlar. Broker unvanı, yalnız tanımlı ofis kurma veya açık Broker/şube yöneticisi atama koşulu gerçekleştiğinde oluşur.</p>
+    <div class="grid2" style="margin-top:16px">
+      <article class="card">
+        <div class="identity-kicker">A · Üyelik ve müşteri ilişkisi</div>
+        <h2 style="margin-top:8px">Standart Üye = Potansiyel Müşteri</h2>
+        <div class="identity-track" style="grid-template-columns:repeat(2,minmax(0,1fr))">
+          <div class="identity-stage"><div class="stepnum">01</div><strong>Standart Üye</strong><small>Temel hesap ve Üye/Müşteri paneli</small></div>
+          <div class="identity-stage"><div class="stepnum">02</div><strong>Potansiyel Müşteri</strong><small>GETMAKS'ın hizmet sunabileceği müşteri adayı</small></div>
+          <div class="identity-stage"><div class="stepnum">03</div><strong>İhtiyaç / dosya</strong><small>Talep Dosyası veya Hizmet Dosyası</small></div>
+          <div class="identity-stage"><div class="stepnum">04</div><strong>Dosya içi taraf rolü</strong><small>Alıcı, satıcı, kiracı vb.</small></div>
+        </div>
+        <div class="field"><label for="memberIntent">Örnek müşteri ihtiyacı</label><select id="memberIntent"><option value="none">Henüz bir ihtiyacını belirtmedi</option><option value="sell">Mülkümü satmak istiyorum</option><option value="rentout">Mülkümü kiraya vermek istiyorum</option><option value="buy">Gayrimenkul satın almak istiyorum</option><option value="rentin">Kiralık gayrimenkul arıyorum</option><option value="transfer">İşletme / hak devri yapmak veya almak istiyorum</option></select></div>
+        <div class="identity-result" id="memberIntentResult" aria-live="polite"><h3>Standart Üye · Potansiyel müşteri</h3><p>Henüz işlem rolü oluşmaz. Üye/Müşteri paneli açıktır; üyelik tek başına aracılık geliri oluşturmaz.</p></div>
+        <div class="identity-rule"><b>Gelir kapısı:</b> Üyelik veya talep açılması gelir kazanıldığı anlamına gelmez. Hizmet bedeli/hak ediş, ilgili sözleşme ve gerçek işlem koşulları doğrulandığında ayrı finansal kayıt süreciyle ele alınır.</div>
+      </article>
+      <article class="card">
+        <div class="identity-kicker">B · Gayrimenkul profesyoneli ve unvanı</div>
+        <h2 style="margin-top:8px">Gayrimenkul Danışmanı → Broker</h2>
+        <div class="identity-track" style="grid-template-columns:repeat(2,minmax(0,1fr))">
+          <div class="identity-stage"><div class="stepnum">01</div><strong>Üye hesabı korunur</strong><small>Profesyonel süreç ayrı bağlantıdır</small></div>
+          <div class="identity-stage"><div class="stepnum">02</div><strong>Gayrimenkul Danışmanı</strong><small>Başlangıç mesleki unvanı</small></div>
+          <div class="identity-stage"><div class="stepnum">03</div><strong>Ofis kurma / atama</strong><small>MAXIMUM kuruluşu veya açık Broker ataması</small></div>
+          <div class="identity-stage"><div class="stepnum">04</div><strong>Broker + yetkili alan</strong><small>Koşullar ve aktif ilişkiler doğrulanınca</small></div>
+        </div>
+        <div class="field"><label for="professionalPath">Örnek profesyonel durumu</label><select id="professionalPath"><option value="consultant">Kabul edilmiş Gayrimenkul Danışmanı, henüz ofisi yok</option><option value="membership">Bir ofise danışman olarak üye oldu</option><option value="maximum">MAXIMUM franchise ofisi kurdu</option><option value="alfa">Getmaks Alfa şubesine Broker olarak atandı</option></select></div>
+        <div class="identity-result" id="professionalPathResult" aria-live="polite"><h3>Unvan: Gayrimenkul Danışmanı</h3><p>Üye alanı korunur. Ofis bağlantısı yoksa ofis yönetimi ve danışman yönetimi açılamaz.</p><div class="mini-rule">Ek alan: profesyonel danışman alanı · ofis alanı yok</div></div>
+        <div class="identity-rule"><b>Yetki kapısı:</b> Bir ofise normal danışman üyeliği kazanmak Broker unvanı vermez. Broker unvanı için MAXIMUM franchise/ofis kuruluşunun onaylanması veya GETMAKS tarafından açıkça Broker/şube yöneticisi olarak atanma ve gerekli aktivasyon koşulları gerekir.</div>
+      </article>
+    </div>
+    <div class="public-rule"><b>Değişmez sonuç:</b> Standart üyelik kişinin müşteri adayı olarak temel hesabıdır; müşteri rolleri dosyada oluşur. Profesyonel unvan ise ayrı mesleki yaşam döngüsüne aittir. Üye, profesyonel, ofis üyeliği, Broker unvanı ve ofis yönetim erişimi tek bir global rol alanına sıkıştırılmaz.</div>
+  </section>
+
+  <section id="overview" class="section">
+    <div class="sectiontitle"><h2>İki ayrı kuruluş yolu</h2><span class="tag cyan">Aynı sistem · farklı sahiplik</span></div>
+    <div class="grid2">
+      <article class="card selected" id="maxCard">
+        <div class="cardhead"><div><span class="internal-badge">İç yönetim etiketi · MAXIMUM</span><h2><span class="highlight">MAXIMUM Ofis</span></h2><div class="sub">İçeride: broker franchise ile kurar</div></div><div class="icon">M</div></div><div class="public-name-chip"><span>Müşteriye ve vitrine görünen ad</span><strong>Maksimum Ofis / Elite</strong></div>
+        <div class="path"><span class="node">GETMAKS Marka</span><span class="arr">→</span><span class="node">Franchise anlaşması</span><span class="arr">→</span><span class="node">Broker ofisi kurar</span></div>
+        <ul class="bullets"><li>Kuruluş talebini broker başlatır; marka değerlendirme ve sözleşme tarafıdır.</li><li>Beş yıllık franchise yükümlülüğü ile aylık/yıllık ödeme düzeni ayrı bilgiler olarak tutulur.</li><li>Brokerın ofis yönetim alanı, gerekli sözleşme/kanıt ve aktivasyon koşulları tamamlanınca açılır.</li></ul>
+        <div class="frbox"><b>Finansal sınır:</b> Aylık/yıllık ödeme sıklığı, franchise süresinin kendisi değildir. Tutar ve ödeme koşulları onaylı anlaşmadan gelir; bu prototip ücret uydurmaz.</div>
+        <div style="margin-top:16px"><button class="primary" onclick="choosePath('maximum')">MAXIMUM kuruluş akışını incele →</button></div>
+      </article>
+      <article class="card" id="alfaCard">
+        <div class="cardhead"><div><span class="internal-badge">İç yönetim etiketi · ALFA</span><h2><span class="alfa">ALFA Şubesi</span></h2><div class="sub">İçeride: GETMAKS Marka kurar</div></div><div class="icon" style="background:#382d18;color:var(--gold)">A</div></div><div class="public-name-chip"><span>Müşteriye ve vitrine görünen ad</span><strong>Getmaks Alfa Bakırköy</strong></div>
+        <div class="path"><span class="node">GETMAKS Marka</span><span class="arr">→</span><span class="node">Şubeyi oluşturur</span><span class="arr">→</span><span class="node">Broker atar</span></div>
+        <ul class="bullets"><li>Şube kuruluş kaydını marka açar; broker franchise başvurusu gibi davranılmaz.</li><li>Broker, şube yöneticisi olarak ayrıca atanabilir. Bu atama sahiplik/franchise anlamına gelmez.</li><li>Maaş, SGK ve prim ancak ayrıca kurulmuş gerçek çalışma ilişkisi varsa gösterilir.</li></ul>
+        <div class="branchbox"><b>Finansal sınır:</b> ALFA şubesi için franchise ücreti varsayılmaz. İşe alma, maaş/SGK/prim ve diğer mali koşullar ayrı yetkili çalışma/ücret kayıtlarına dayanır.</div>
+        <div style="margin-top:16px"><button class="gold" onclick="choosePath('alfa')">ALFA şube kuruluş akışını incele →</button></div>
+      </article>
+    </div>
+  </section>
+
+  <section id="public-names" class="section" style="margin-top:34px">
+    <div id="publicPreviewHeader" class="public-only hidden">
+      <div class="public-preview-brand">GETMAKS GAYRİMENKUL</div>
+      <h1 class="public-preview-title">Size hizmet veren ofisler</h1>
+      <p class="public-preview-copy">İhtiyacınıza uygun gayrimenkul hizmetleri için ofislerimizin iletişim ve konum bilgilerini inceleyin.</p>
+      <button type="button" class="return-prototype" onclick="setViewMode('internal')">← İç tasarım prototipine dön</button>
+    </div>
+    <div class="sectiontitle"><h2>İç model / dış marka görünümü</h2><span class="tag green">Kamusal adlandırma standardı</span></div>
+    <p class="lead">Bu bölüm, aynı ofisin iç yönetim ekranında farklı; müşteri paneli, ilan, mağaza/vitrin ve tanıtım yüzlerinde farklı anlatılmasını örnekler. İç ayrımlar sistemde korunur ama dışarıya gereksiz işletme yapısı bilgisi olarak taşınmaz.</p>
+    <div class="modebar" role="group" aria-label="Görünüm modu">
+      <button id="internalMode" class="on" type="button" onclick="setViewMode('internal')">İç yönetim bilgileri</button>
+      <button id="publicMode" type="button" onclick="setViewMode('public')">Yalnız dış marka adı</button>
+    </div>
+    <div id="viewModeNotice" class="view-state"><b>İç yönetim bilgileri:</b> Yetkili marka/ofis yöneticisi kuruluş türünü, kuruluş kaynağını ve broker ilişkisinin niteliğini görür. Bu seçim yalnızca aşağıdaki örnek ofis kartlarının önizlemesini değiştirir; prototipin diğer bölümleri iç tasarım dokümantasyonudur.</div>
+    <div class="naming-grid" style="margin-top:16px">
+      <article class="naming-card">
+        <div class="cardhead"><div><span class="internal-badge">İç kayıt: MAXIMUM</span><h3><span class="internal-name">MAXIMUM Ofis</span><span class="public-name-inline hidden" id="maxPublicHeading">Maksimum Ofis / Elite</span></h3><div class="sub internal-only">Kuruluş: broker franchise ilişkisi</div><div class="sub public-only hidden" id="maxPublicSubtitle">Gayrimenkul hizmetleri</div></div><div class="icon">M</div></div>
+        <div class="naming-fields internal-config">
+          <div class="field"><label for="maxPublicSuffix">Brokerın eklediği ek marka adı</label><input id="maxPublicSuffix" value="Elite" maxlength="60" autocomplete="off"><div class="notice">Örnek: Elite. Bu alan dış marka adına eklenir.</div></div>
+          <div class="field"><label for="maxPublicLocation">Ofis konumu (ayrı bilgi)</label><input id="maxPublicLocation" value="Bakırköy" maxlength="80" autocomplete="off"><div class="notice">Konum, marka adına otomatik eklenmez.</div></div>
+        </div>
+        <div class="preview" aria-live="polite"><div class="preview-brand">MAKSİMUM OFİS</div><div class="preview-name" id="maxPublicName">Maksimum Ofis / Elite</div><div class="preview-meta" id="maxPublicMeta">Bakırköy</div></div>
+        <div class="view-state internal-only"><b>İç ekranda görülebilir:</b> `office_type=MAXIMUM`, kuruluş kaynağı, franchise sözleşmesi ve broker-ofis ilişkisinin yetkili kayıtları.</div>
+        <div class="view-state internal-only"><b>Dış görünüm kuralı:</b> Müşteri yüzünde yalnızca “Maksimum Ofis / [ek marka adı]” ve ayrı konum bilgisi gösterilir. İç kuruluş ve ücret ilişkileri dış vitrin metnine taşınmaz.</div>
+      </article>
+      <article class="naming-card">
+        <div class="cardhead"><div><span class="internal-badge">İç kayıt: ALFA</span><h3><span class="internal-name">ALFA Şubesi</span><span class="public-name-inline hidden" id="alfaPublicHeading">Getmaks Alfa Bakırköy</span></h3><div class="sub internal-only">Kuruluş: GETMAKS Marka</div><div class="sub public-only hidden" id="alfaPublicSubtitle">Gayrimenkul hizmetleri</div></div><div class="icon" style="background:#382d18;color:var(--gold)">A</div></div>
+        <div class="naming-fields internal-config">
+          <div class="field"><label for="alfaPublicLocation">Şubenin ilçesi / konumu</label><input id="alfaPublicLocation" value="Bakırköy" maxlength="80" autocomplete="off"><div class="notice">Marka tarafından kaydedilen konum kullanılır.</div></div>
+          <div class="field"><label>Brokerın iç ilişkisi</label><div class="node" style="min-height:42px;display:flex;align-items:center">Marka ataması olabilir</div><div class="notice">Bu bilgi dış marka adını değiştirmez.</div></div>
+        </div>
+        <div class="preview" aria-live="polite"><div class="preview-brand">GETMAKS</div><div class="preview-name" id="alfaPublicName">Getmaks Alfa Bakırköy</div><div class="preview-meta" id="alfaPublicMeta">Bakırköy</div></div>
+        <div class="view-state internal-only"><b>İç ekranda görülebilir:</b> `office_type=ALFA`, marka kuruluş kaydı ve varsa broker şube yöneticisi ataması.</div>
+        <div class="view-state internal-only"><b>Dış görünüm kuralı:</b> Müşteri yüzünde yalnızca “Getmaks Alfa [ilçe/konum]” ve müşteriye gerekli konum bilgisi gösterilir. İç kuruluş kaynağı ve yönetici ataması dış vitrin metnine taşınmaz.</div>
+      </article>
+    </div>
+    <div class="card internal-only" style="margin-top:16px">
+      <div class="sectiontitle" style="margin-top:0"><h2>Nerede hangi ad gösterilir?</h2><span class="tag">Tek adlandırma kaynağı</span></div>
+      <div class="matrix-wrap"><table class="matrix"><thead><tr><th>Yüzey</th><th>Kullanılan ad</th><th>Dışarıya açıklanmayacak iç ayrım</th></tr></thead><tbody>
+        <tr><td>Müşteri paneli ve randevu</td><td>Maksimum Ofis / Elite · Getmaks Alfa Bakırköy</td><td>Franchise modeli, şube kuruluş kaynağı, brokerın iç ilişki türü</td></tr>
+        <tr><td>İlan, mağaza/vitrin ve tanıtım</td><td>Ofisin onaylı dış marka adı</td><td>İç Office tür kodu ve ticari organizasyon ilişkileri</td></tr>
+        <tr><td>Marka yönetimi ve yetkili iç ekranlar</td><td>İç ofis adı + MAXIMUM/ALFA sınıflandırması</td><td>İç ayrımlar bu yüzeyde yalnız yetkili kullanıcılara açıktır</td></tr>
+        <tr><td>Resmî sözleşme/fatura</td><td>İlgili belgede gerekli yasal taraf ve ticari unvan bilgileri</td><td>Yasal kimlik veya zorunlu açıklamalar gizlenmez; kamuya açık marka etiketi resmî taraf bilgisinin yerine geçmez</td></tr>
+      </tbody></table></div>
+      <p class="notice">Üretim kuralı: İç kuruluş türü ve yetki ilişkileri ile dışarıda kullanılan görünen ad ayrı veri/temsil katmanlarıdır. Aynı public display name müşteri yüzeylerinde merkezi kaynaktan kullanılmalıdır; ekranda serbest metinle her seferinde yeniden oluşturulmamalıdır.</p>
+    </div>
+  </section>
+
+  <section id="maximum" class="section" style="margin-top:34px">
+    <div class="sectiontitle"><h2>MAXIMUM Franchise Ofisi — yaşam döngüsü</h2><span class="tag cyan">Başlatan: Broker</span></div>
+    <div class="workflow" id="maxSteps">
+      <div class="step current" data-flow="max" data-step="0"><div class="num">01</div><b>Broker başvurusu</b><small>Kuruluş niyeti ve bilgiler</small></div>
+      <div class="step" data-flow="max" data-step="1"><div class="num">02</div><b>Marka incelemesi</b><small>Uygunluk ve belgeler</small></div>
+      <div class="step" data-flow="max" data-step="2"><div class="num">03</div><b>Franchise anlaşması</b><small>5 yıl + ödeme düzeni</small></div>
+      <div class="step" data-flow="max" data-step="3"><div class="num">04</div><b>Ofis kaydı</b><small>MAXIMUM Ofis</small></div>
+      <div class="step" data-flow="max" data-step="4"><div class="num">05</div><b>Aktivasyon</b><small>Panel ve operasyon</small></div>
+    </div>
+    <div class="detail" id="maxDetail" aria-live="polite"><div class="mini-label">ADIM 01 / 05</div><h3>Broker kuruluş talebini başlatır</h3><p>Broker mevcut üye/profesyonel hesabıyla MAXIMUM franchise başvurusu oluşturur. Başvuru, kendi başına aktif ofis veya operasyon erişimi yaratmaz.</p><div class="foot"><span class="tag">Kayıt: başvuru / kuruluş taslağı</span><button class="primary" onclick="nextStep('max')">Sonraki adım →</button></div></div>
+  </section>
+
+  <section id="alfa" class="section" style="margin-top:34px">
+    <div class="sectiontitle"><h2>ALFA Şubesi — yaşam döngüsü</h2><span class="tag gold">Başlatan: GETMAKS Marka</span></div>
+    <div class="workflow" id="alfaSteps">
+      <div class="step current" data-flow="alfa" data-step="0"><div class="num">01</div><b>Marka şubeyi açar</b><small>Şube bilgileri ve kapsam</small></div>
+      <div class="step" data-flow="alfa" data-step="1"><div class="num">02</div><b>Şube hazırlığı</b><small>Adres, yetki ve belgeler</small></div>
+      <div class="step" data-flow="alfa" data-step="2"><div class="num">03</div><b>Broker ataması</b><small>Yöneticilik ilişkisi</small></div>
+      <div class="step" data-flow="alfa" data-step="3"><div class="num">04</div><b>Çalışma koşulları</b><small>Varsa istihdam/prim</small></div>
+      <div class="step" data-flow="alfa" data-step="4"><div class="num">05</div><b>Aktivasyon</b><small>Şube çalışma alanı</small></div>
+    </div>
+    <div class="detail" id="alfaDetail" aria-live="polite"><div class="mini-label">ADIM 01 / 05</div><h3>GETMAKS Marka şube kaydını oluşturur</h3><p>ALFA Şubesi marka kaynaklı kuruluştur. İlk kaydı broker franchise başvurusu üretmez; şube kaydı marka sahipliği ve yönetim yetkisi kapsamında tutulur.</p><div class="foot"><span class="tag gold">Kayıt: marka kaynaklı şube</span><button class="gold" onclick="nextStep('alfa')">Sonraki adım →</button></div></div>
+  </section>
+
+  <section id="workspace-relationship" class="section internal-only" style="margin-top:28px">
+    <div class="card">
+      <div class="sectiontitle" style="margin-top:0"><h2>Bu ayrım panellere nasıl yansır?</h2><span class="tag">Aynı kullanıcı kimliği · ayrı ilişkiler</span></div>
+      <div class="fieldgrid">
+        <div class="field"><label for="scenario">Örnek ilişki senaryosu</label><select id="scenario"><option value="franchise">Broker MAXIMUM franchise ofisi kurdu</option><option value="alfa">Marka ALFA şubesi açtı ve broker atadı</option><option value="without">Brokerın aktif ofis ilişkisi yok</option><option value="consultant">Danışman aktif ofis üyeliğine sahip</option></select></div>
+        <div class="field"><label>Çalışma alanı sonucu</label><div id="workspaceResult" class="node" style="min-height:42px;display:flex;align-items:center">Üye alanı + aktif MAXIMUM Ofis alanı</div></div>
+      </div>
+      <p class="notice" id="workspaceNote">Broker franchise ofisinin yetkili yöneticisidir. Danışman ekleme ancak ofis aktif ve broker yetkili olduğunda açılır.</p>
+    </div>
+  </section>
+
+
+  <section id="transaction-roles" class="section internal-only" style="margin-top:34px">
+    <div class="sectiontitle"><h2>İşlem rolleri: hesap aynı kalır</h2><span class="tag cyan">Rol = dosyaya bağlı</span></div>
+    <p class="lead">Her hesap Standart Üye olarak başlar; GETMAKS açısından potansiyel müşteri havuzundadır. Gayrimenkul profesyoneli, mesleki kabulden sonra Gayrimenkul Danışmanı unvanıyla başlar. Broker unvanı ancak MAXIMUM ofis kuruluşu veya açık Broker/şube yöneticisi ataması ve ilgili aktivasyon koşulları sağlandığında kazanılır. Broker ve Danışman, ancak profesyonel kayıtları ve yetkili ilişkileri oluştuğunda ek çalışma alanı kazanır. Alıcı, Satıcı, Mülk Sahibi, Kiracı, Devreden ve Devir Alan ise kullanıcının kalıcı hesap türü değildir; yalnız ilgili dosyanın taraf/rol kaydıdır.</p>
+    <div class="flow-info"><strong>Değişmez kural:</strong> Bir kullanıcı bir dosyada Satıcı, başka dosyada Alıcı olabilir. Bu rol değişikliği panelini değiştirmez; yalnız ilgili talep, hizmet, gösterim, sözleşme ve işlem dosyasında hangi tarafta olduğunu belirler. İçeride MAXIMUM/ALFA, franchise/şube ve brokerın sahip/yönetici ilişkisi korunur; müşteri ekranında bu iç sınıflandırma gösterilmez.</div>
+    <div class="role-controls">
+      <div class="field"><label for="roleFlowType">Örnek işlem modeli</label><select id="roleFlowType"><option value="sale">Satış</option><option value="rent">Kiralama</option><option value="transfer">İşletme / hak devri</option></select></div>
+      <div class="field"><label for="roleUserExample">Örnek hesap</label><select id="roleUserExample"><option value="member">Temel Üye / Müşteri</option><option value="broker">Aktif Broker</option><option value="consultant">Aktif Danışman</option></select></div>
+      <div class="field"><label>Panel davranışı</label><div class="node" style="min-height:42px;display:flex;align-items:center" id="roleWorkspaceResult">Üye/Müşteri alanı aynı kalır</div></div>
+    </div>
+    <div id="roleFlowStages" class="role-flow" aria-live="polite"></div>
+    <div class="card" style="margin-top:12px">
+      <div class="sectiontitle" style="margin-top:0"><h2>İşlem tarafı / rol eşleştirmesi</h2><span class="tag">Dosya kapsamı</span></div>
+      <div class="party-table-wrap"><table class="party-table"><thead><tr><th>Aşama</th><th>Dosyadaki taraf rolü</th><th>Kaynak kayıt</th><th>Yetki / açıklama</th></tr></thead><tbody id="roleMappingRows"></tbody></table></div>
+      <p class="notice">Salt ilan görüntüleme global rol üretmez. İlanla anlamlı etkileşim (iletişim/talep/gösterim isteği gibi) oluştuğunda ilgili ilan/talep bağlamında Alıcı Adayı, Kiracı Adayı veya Devir Alan Adayı taraf kaydı oluşturulur. Kullanıcı hesabının türü değişmez.</p>
+    </div>
+  </section>
+
+  <section id="contract-gates" class="section internal-only" style="margin-top:34px">
+    <div class="sectiontitle"><h2>Dijital sözleşme ve işlem kapıları</h2><span class="tag gold">Aşama aşama doğrulama</span></div>
+    <p class="lead">Sözleşme tek seferde ve rastgele üretilmez. Doğru dosya, taraflar, temsil yetkisi, süreç verileri ve gerekli belgeler doğrulandıkça ilgili sözleşme taslağı hazırlanır; taraflara sunulur, imza durumu/kanıtı takip edilir. İşlem Dosyası ancak gereken sözleşmeler, belgeler, süreç adımları ve gerçekleşme kanıtları tamamlandığında kapanışa uygun olur.</p>
+    <div class="flow-info"><strong>Hukuki güvenlik kapısı:</strong> Aşağıdaki sözleşme adları ve sıralama, ürün akışının prototip örneğidir. Hangi sözleşmenin hangi işlem türünde zorunlu olduğu, temsil ve imza şartları, dijital imza yönteminin geçerlilik koşulları marka tarafından onaylanmış hukuk gereklilik matrisinden gelmelidir. Dijital imza ekranındaki demo değişiklikleri gerçek imza veya hukuki geçerlilik kanıtı değildir.</div>
+    <div class="contract-controls">
+      <div class="field"><label for="contractFlowType">İşlem modeli</label><select id="contractFlowType"><option value="sale">Satış</option><option value="rent">Kiralama</option><option value="transfer">Devir</option></select></div>
+      <div class="field"><label for="showingApplies">Bu dosyada gösterim yapılacak mı?</label><select id="showingApplies"><option value="yes">Evet — yer gösterme formu gerekir</option><option value="no">Hayır / bu aşama uygulanmıyor</option></select></div>
+      <div class="field"><label for="depositApplies">Kapora / rezervasyon koşulu var mı?</label><select id="depositApplies"><option value="yes">Evet — sözleşme ve ödeme kanıtı izlenecek</option><option value="no">Hayır — bu dosyada uygulanmıyor</option></select></div>
+    </div>
+    <div class="contract-layout">
+      <div>
+        <div class="sectiontitle" style="margin-top:0"><h2>Belge ve sözleşme aşamaları</h2><span class="tag cyan" id="contractTypeTag">Satış akışı</span></div>
+        <div id="contractList" class="contract-list" aria-live="polite"></div>
+      </div>
+      <aside class="gate-panel" aria-label="İşlem dosyası kapanış ön koşulları">
+        <h3>İşlem Dosyası kapanış kontrolü</h3>
+        <p class="sub">Bu kapılar tamamlanmadan işlem kapatılamaz.</p>
+        <label class="gate-check"><input type="checkbox" id="gateParties" checked><span><b>Taraflar ve temsil doğrulandı</b><br>Dosyadaki kişi/kurumlar ve imza yetkileri kontrol edildi.</span></label>
+        <label class="gate-check"><input type="checkbox" id="gateProcess"><span><b>Süreç adımları tamamlandı</b><br>Gösterim, mutabakat, gerekli onaylar ve görevler sonuçlandı.</span></label>
+        <label class="gate-check"><input type="checkbox" id="gateDocuments"><span><b>Zorunlu belgeler tamamlandı</b><br>Etkin gereklilik setindeki son onaylı belge sürümleri mevcut.</span></label>
+        <div class="gate-check"><span style="color:var(--cyan);font-size:17px">◆</span><span><b>Gerekli sözleşmeler doğrulandı</b><br><span id="contractGateText">Sözleşme ve imza kanıtları bekleniyor.</span></span></div>
+        <label class="gate-check"><input type="checkbox" id="gateExecution"><span><b>Gerçekleşme / teslim kanıtı eklendi</b><br>İşlem türüne göre gereken sonuç kanıtı kaydedildi.</span></label>
+        <div class="progress-track"><div id="closureProgress"></div></div>
+        <div class="gate-state" id="closureState" aria-live="polite">Kapanışa hazır değil. Eksik koşullar tamamlanmalı.</div>
+        <button class="primary" style="width:100%;margin-top:12px" id="closeTransactionDemo" disabled>İşlem Dosyasını kapat</button>
+        <p class="mini-rule">Demo kapanış yalnızca prototip durumunu değiştirir; gerçek kayıt, tahsilat veya tapu/teslim işlemi gerçekleştirmez.</p>
+      </aside>
+    </div>
+    <div class="public-rule" style="margin-top:16px"><b>Ayrı kayıt kuralı:</b> Sözleşme hazırlanması, imzaya sunulması, tüm tarafların imzalaması, imza/kanıt kontrolü, kapora/depozito ödeme kaydı ve işlemin gerçekleşmesi ayrı durumlardır. “Ödendi” etiketi yalnız gerçek ödeme kaydı ve doğrulayıcı kanıtıyla oluşur.</div>
+  </section>
+
+  <section id="matrix" class="section internal-only" style="margin-top:34px">
+    <div class="sectiontitle"><h2>İç yönetim ilişki matrisi</h2><span class="internal-badge">Yalnız yetkili iç roller</span></div>
+    <div class="card matrix-wrap">
+      <table class="matrix"><thead><tr><th>BAŞLIK</th><th>MAXIMUM OFİS</th><th>ALFA ŞUBESİ</th></tr></thead><tbody>
+      <tr><td>Kuruluşu başlatan</td><td>Broker</td><td>GETMAKS Marka</td></tr>
+      <tr><td>Kuruluş modeli</td><td><span class="highlight">Franchise</span></td><td><span class="alfa">Marka şubesi</span></td></tr>
+      <tr><td>Brokerın ilişkisi</td><td>Franchise/ofis işletme ilişkisi; yetkiler aktif kayıtlarla hesaplanır</td><td>Marka tarafından atanmış şube yöneticisi; sahiplik anlamına gelmez</td></tr>
+      <tr><td>5 yıllık franchise ücreti</td><td>Onaylı franchise anlaşmasının yükümlülüğü</td><td>Varsayılmaz</td></tr>
+      <tr><td>Aylık / yıllık ödeme</td><td>Franchise bedelinin onaylı ödeme sıklığı; süreyle karıştırılmaz</td><td>Franchise ödemesi olarak varsayılmaz</td></tr>
+      <tr><td>Maaş / SGK / prim</td><td>Otomatik değil; ayrıca kurulan çalışma ilişkisi gerekir</td><td>Broker marka tarafından atanmış ve çalışma ilişkisi kurulmuşsa mümkün</td></tr>
+      <tr><td>Danışman bağlama</td><td>Aktif ofise `OfficeMembership` üzerinden</td><td>Aktif şubeye `OfficeMembership` üzerinden</td></tr>
+      <tr><td>Marka denetimi</td><td>Marka sözleşme, standart ve yetki kapsamını yönetir</td><td>Marka şubenin kuruluş ve işletim sorumluluğunu korur</td></tr>
+      <tr><td>Operasyon dosyaları</td><td colspan="2">Talep, Hizmet, mülk/portföy/ilan, eşleşme, gösterim ve İşlem Dosyası aynı ortak veri sahipliği kurallarıyla çalışır.</td></tr>
+      <tr><td>Üye / müşteri alanı</td><td colspan="2">Her hesapta korunur; müşteri taraf rolleri ilgili dosyanın bağlamında kalır.</td></tr>
+      </tbody></table>
+      <p class="notice">İç teknik kural: `Office.office_type` değerleri `MAXIMUM | ALFA` iç sınıflandırmasıdır; kamuya açık ad yerine geçmez. Kuruluş kaynağı ve broker ataması ilgili gerçek ilişki kayıtlarından okunur. İç ekran bu ayrımı yetkili kullanıcılara gösterir; müşteri/vitrin ekranı yalnız onaylı dış marka adını kullanır. Veritabanı enumları bu prototip nedeniyle yeniden adlandırılmaz.</p>
+    </div>
+  </section>
+  <div class="bottom"><div><b>Sonraki bağımlı dilim</b><div class="sub">Dilim 04 · Danışmanın ofise katılması, üyeliği ve aktivasyonu</div></div><button class="ghost" onclick="window.scrollTo({top:0,behavior:'smooth'})">Başa dön ↑</button></div>
+</main>
+</div>
+<div class="toast" id="toast" role="status"></div>
+<script>
+const maxContent=[
+ ['Broker kuruluş talebini başlatır','Broker mevcut üye/profesyonel hesabıyla MAXIMUM franchise başvurusu oluşturur. Başvuru, kendi başına aktif ofis veya operasyon erişimi yaratmaz.','Kayıt: başvuru / kuruluş taslağı'],
+ ['Marka başvuruyu inceler','Marka; broker uygunluğunu, gerekli belgeleri ve kuruluş ön koşullarını inceler. Eksik bilgi istenebilir, gerekçeli ret verilebilir veya başvuru sonraki aşamaya alınabilir.','Etkisi: marka kuyruğu + broker durumu'],
+ ['Franchise koşulları ve sözleşme','Beş yıllık franchise süresi, ücret tutarı, ödeme sıklığı ve diğer yükümlülükler ayrı alanlardır. Yalnız onaylı anlaşma sürümü kullanılır; aylık/yıllık ödeme seçimi beş yıllık süreyi değiştirmez.','Kapı: anlaşma + gerekli kanıtlar'],
+ ['MAXIMUM Ofis kaydı oluşturulur','Ofis türü MAXIMUM olarak kaydedilir; kuruluş kaynağı broker franchise süreciyle ilişkilendirilir. Eski danışman çalışma modeli kayıtlarından ofis türü türetilmez.','Kayıt: Office + açık kuruluş ilişkisi'],
+ ['Aktivasyon ve ofis çalışma alanı','Gerekli sözleşme, belgeler, broker ilişkisi ve ofis aktivasyonu doğrulanınca brokerın Ofis çalışma alanı açılır. Danışmanlar bu ofise aktif OfficeMembership ile eklenir.','Sonuç: yetkili MAXIMUM Ofis alanı']
+];
+const alfaContent=[
+ ['GETMAKS Marka şube kaydını oluşturur','ALFA Şubesi marka kaynaklı kuruluştur. İlk kaydı broker franchise başvurusu üretmez; şube kaydı marka sahipliği ve yönetim yetkisi kapsamında tutulur.','Kayıt: marka kaynaklı şube'],
+ ['Marka şube hazırlığını tamamlar','Marka şubenin adresini, operasyon kapsamını, gerekli belgelerini ve aktivasyon sorumlusunu tanımlar. Henüz broker atanmadıysa atama adımı bekler; bu durum franchise ilişkisine çevrilmez.','Etkisi: marka şube hazırlığı'],
+ ['Broker şube yöneticisi olarak atanır','Marka uygun brokerı şubeye yönetici olarak atayabilir. Brokerın ataması sahiplik veya franchise hakkı doğurmaz; ilişki ayrı ve tarihçeli tutulur.','Kayıt: broker–şube yöneticilik ilişkisi'],
+ ['Varsa çalışma/ücret ilişkisi kuruluyor','Maaş, SGK ve prim ancak gerçek çalışma/istihdam ilişkisi kurulmuşsa ve geçerli koşullar kaydedilmişse gösterilir. Atama tek başına maaş veya ödeme üretmez.','Kapı: ayrı çalışma koşulları'],
+ ['ALFA Şube çalışma alanı açılır','Şube ve atanmış broker için yetkiler ayrı ayrı doğrulanır. Danışmanlar şubeye OfficeMembership ile bağlanır; marka şube üzerindeki marka yönetim yetkisini korur.','Sonuç: yetkili ALFA Şube alanı']
+];
+let current={max:0,alfa:0};
+function choosePath(path){document.querySelector('#'+(path==='maximum'?'maxCard':'alfaCard')).scrollIntoView({behavior:'smooth',block:'center'});document.querySelectorAll('.card').forEach(x=>x.classList.remove('selected'));document.querySelector('#'+(path==='maximum'?'maxCard':'alfaCard')).classList.add('selected');toast(path==='maximum'?'MAXIMUM franchise yolu seçildi.':'ALFA marka şubesi yolu seçildi.');}
+function renderStep(flow,index){current[flow]=index;let data=(flow==='max'?maxContent:alfaContent)[index];let root=document.getElementById(flow==='max'?'maxSteps':'alfaSteps');root.querySelectorAll('.step').forEach((el,i)=>{el.classList.toggle('current',i===index);el.classList.toggle('done',i<index)});let detail=document.getElementById(flow+'Detail');detail.innerHTML=`<div class="mini-label">ADIM ${String(index+1).padStart(2,'0')} / 05</div><h3>${data[0]}</h3><p>${data[1]}</p><div class="foot"><span class="tag ${flow==='max'?'cyan':'gold'}">${data[2]}</span><div style="display:flex;gap:8px">${index>0?'<button class="ghost" onclick="prevStep(\''+flow+'\')">← Önceki</button>':''}${index<4?'<button class="'+(flow==='max'?'primary':'gold')+'" onclick="nextStep(\''+flow+'\')">Sonraki adım →</button>':'<button class="ghost" onclick="resetFlow(\''+flow+'\')">Akışı baştan başlat ↻</button>'}</div></div>`;root.querySelectorAll('.step').forEach(el=>el.onclick=()=>renderStep(flow,Number(el.dataset.step)));}
+function nextStep(flow){if(current[flow]<4)renderStep(flow,current[flow]+1);else toast('Akışın demo adımları tamamlandı. Gerçek kayıt oluşturulmadı.');}
+function prevStep(flow){if(current[flow]>0)renderStep(flow,current[flow]-1)}function resetFlow(flow){renderStep(flow,0)}
+document.querySelectorAll('.nav button').forEach(b=>b.addEventListener('click',()=>{document.querySelectorAll('.nav button').forEach(x=>x.classList.remove('active'));b.classList.add('active');document.getElementById(b.dataset.target).scrollIntoView({behavior:'smooth',block:'start'})}));
+const scenario=document.getElementById('scenario');scenario.addEventListener('change',()=>{let result=document.getElementById('workspaceResult'),note=document.getElementById('workspaceNote');const vals={franchise:['Üye alanı + aktif MAXIMUM Ofis alanı','Broker franchise/ofis işletme ilişkisinin ve aktivasyonun aktif olduğu kapsamda operasyon yürütür.'],alfa:['Üye alanı + atanmışsa ALFA Şube alanı','Brokerın şube yöneticiliği ayrı atama kaydıyla açılır. Marka şubeyi kurar ve marka yönetim kapsamını korur.'],without:['Üye alanı + broker başlangıç alanı','Aktif ofis ilişkisi yoksa danışman/portföy/işlem operasyon menüsü açılmaz.'],consultant:['Üye alanı + aktif üye olduğu ofis çalışma alanı','Danışman ofise doğrudan broker alt kullanıcısı olarak değil, OfficeMembership ile bağlanır.']}[scenario.value];result.textContent=vals[0];note.textContent=vals[1]});
+function toast(msg){const t=document.getElementById('toast');t.textContent=msg;t.classList.add('show');clearTimeout(window._toastTimer);window._toastTimer=setTimeout(()=>t.classList.remove('show'),3000)}
+document.querySelectorAll('.step').forEach(el=>el.addEventListener('click',()=>renderStep(el.dataset.flow,Number(el.dataset.step))));
+const role=document.getElementById('demoRole');role.addEventListener('change',()=>{const map={brand:'GETMAKS Marka yöneticisi: İç yönetim ekranında MAXIMUM/ALFA, kuruluş kaynağı ve broker ilişkilerini görür. Kamuya açık adlandırmayı ayrı denetler.',franchise:'MAXIMUM franchise brokerı: iç sistemde franchise ilişkisinden sorumludur. Müşteriler ofisi Maksimum Ofis / [ek marka adı] olarak görür; franchise ayrımı vitrin metnine taşınmaz.',branch:'ALFA şube yöneticisi: iç sistemde atanmış yönetici ilişkisidir. Müşteriler şubeyi Getmaks Alfa [İlçe] adıyla görür; iç atama/şube sınıflandırması vitrine taşınmaz.',consultant:'Danışman: üye alanını korur; Ofis alanı yalnız aktif OfficeMembership ile görünür.',member:'Standart üye: müşteri alanını görür; profesyonellik veya ofis erişimi e-posta/kimlik doğrulamasıyla otomatik verilmez.'};toast(map[role.value])});
+function setViewMode(mode){
+ const internal=mode==='internal';
+ document.body.classList.toggle('public-preview',!internal);
+ document.getElementById('internalMode').classList.toggle('on',internal);
+ document.getElementById('publicMode').classList.toggle('on',!internal);
+ document.getElementById('publicMode').classList.toggle('public-mode',!internal);
+ document.querySelectorAll('.internal-only,.internal-config').forEach(el=>el.classList.toggle('hidden',!internal));
+ document.querySelectorAll('.public-only').forEach(el=>el.classList.toggle('hidden',internal));
+ document.querySelectorAll('.internal-badge,.internal-name').forEach(el=>el.classList.toggle('hidden',!internal));
+ document.querySelectorAll('.public-name-inline').forEach(el=>el.classList.toggle('hidden',internal));
+ document.getElementById('viewModeNotice').innerHTML=internal
+  ? '<b>İç yönetim bilgileri:</b> Yetkili marka/ofis yöneticisi kuruluş türünü, kuruluş kaynağını ve broker ilişkisinin niteliğini görür. Dış yüzeyler ise aşağıdaki onaylı marka adlarını kullanır.'
+  : '<b>Dış görünüm:</b> Yalnızca dış ofis adları ve müşteriye gösterilmesi gereken konum bilgileri.';
+ if(!internal){document.getElementById('public-names').scrollIntoView({behavior:'instant',block:'start'});}
+}
+// v1.3: member prospect logic and professional title/office relationship are independent.
+const memberIntentData={
+ none:{title:'Standart Üye · Potansiyel müşteri',body:'Henüz işlem rolü oluşmaz. Üye/Müşteri paneli açıktır; üyelik tek başına aracılık geliri oluşturmaz.',record:'Dosya kaydı yok; yalnız temel üyelik kaydı vardır.'},
+ sell:{title:'Mülk sahibi / Satıcı adayı',body:'Hizmet talebi başlatıldığında Hizmet Dosyası açılır. Satıcı/mülk sahibi rolü bu dosyanın bağlamında kaydedilir.',record:'Başlangıç: Hizmet Dosyası · ön koşul: mülk ve temsil/yetki kontrolü.'},
+ rentout:{title:'Mülk sahibi / Kiraya veren adayı',body:'Kiraya verme hizmeti için Hizmet Dosyası açılır; kiraya veren rolü yalnız ilgili dosyaya bağlanır.',record:'Başlangıç: Hizmet Dosyası · kira depozitosu kapora/ön ödemeden ayrı tutulur.'},
+ buy:{title:'Alıcı adayı',body:'Satın alma ihtiyacı Talep Dosyası oluşturur. İlanı yalnız görmek kalıcı rol yaratmaz; anlamlı etkileşim ilgili ilan/talep taraf kaydını doğurabilir.',record:'Başlangıç: Talep Dosyası · rol kapsamı: ilgili talep/ilan/işlem.'},
+ rentin:{title:'Kiracı adayı',body:'Kiralık gayrimenkul ihtiyacı Talep Dosyası oluşturur. Kiracı rolü yalnız ilgili dosyada ve işlemde tutulur.',record:'Başlangıç: Talep Dosyası · rol kapsamı: ilgili kiralama süreci.'},
+ transfer:{title:'Devreden veya Devir Alan adayı',body:'İşletme/hak devri ihtiyacına göre Hizmet Dosyası veya Talep Dosyası açılır. Taraf rolü işlem yönüne ve ilgili dosyaya bağlıdır.',record:'Başlangıç: işlem yönüne göre Hizmet/Talep Dosyası · devir türü ayrıca belirlenir.'}
+};
+function renderMemberIntent(){
+ const d=memberIntentData[document.getElementById('memberIntent').value];
+ document.getElementById('memberIntentResult').innerHTML=`<h3>${d.title}</h3><p>${d.body}</p><div class="mini-rule">${d.record}</div>`;
+}
+const professionalPathData={
+ consultant:{title:'Unvan: Gayrimenkul Danışmanı',body:'Üye alanı korunur. Ofis bağlantısı yoksa ofis yönetimi ve danışman yönetimi açılamaz.',detail:'Ek alan: profesyonel danışman alanı · ofis alanı yok'},
+ membership:{title:'Unvan: Gayrimenkul Danışmanı',body:'Aktif OfficeMembership, danışmanın bağlı olduğu ofis çalışma alanını ve izinlerini açar. Bu ilişki danışmanı Broker yapmaz.',detail:'Ek alan: Üye/Müşteri + Danışman + aktif üyeliğin izin verdiği Ofis alanı · Broker yetkisi yok'},
+ maximum:{title:'Unvan: Broker · MAXIMUM franchise/ofis sahibi',body:'Marka değerlendirmesi, onaylı franchise anlaşması, gerekli belgeler ve ofis aktivasyonu tamamlandığında ilgili MAXIMUM Ofis alanı açılır.',detail:'Ek alan: Üye/Müşteri + Profesyonel + yetkili MAXIMUM Ofis yönetimi · 5 yıllık franchise yükümlülüğü anlaşmada izlenir'},
+ alfa:{title:'Unvan: Broker · Getmaks Alfa şube yöneticisi',body:'GETMAKS tarafından Broker/şube yöneticisi olarak açık atama ve gerekli aktivasyon tamamlandığında ilgili ALFA Şube alanı açılır. Bu atama franchise sahipliği anlamına gelmez.',detail:'Ek alan: Üye/Müşteri + Profesyonel + atanmış ALFA Şube yönetimi · maaş/SGK/prim varsa ayrı çalışma ilişkisi gerekir'}
+};
+function renderProfessionalPath(){
+ const d=professionalPathData[document.getElementById('professionalPath').value];
+ document.getElementById('professionalPathResult').innerHTML=`<h3>${d.title}</h3><p>${d.body}</p><div class="mini-rule">${d.detail}</div>`;
+}
+document.getElementById('memberIntent').addEventListener('change',renderMemberIntent);
+document.getElementById('professionalPath').addEventListener('change',renderProfessionalPath);
+renderMemberIntent();renderProfessionalPath();
+
+function updatePublicNames(){
+ const suffix=document.getElementById('maxPublicSuffix').value.trim();
+ const maxName=document.getElementById('maxPublicName');
+ maxName.textContent=suffix?`Maksimum Ofis / ${suffix}`:'Maksimum Ofis';
+ document.getElementById('maxPublicHeading').textContent=maxName.textContent;
+ const maxLoc=document.getElementById('maxPublicLocation').value.trim();
+ document.getElementById('maxPublicMeta').textContent=maxLoc;
+ const alfaLoc=document.getElementById('alfaPublicLocation').value.trim();
+ document.getElementById('alfaPublicName').textContent=alfaLoc?`Getmaks Alfa ${alfaLoc}`:'Getmaks Alfa';
+ document.getElementById('alfaPublicHeading').textContent=document.getElementById('alfaPublicName').textContent;
+ document.getElementById('maxPublicSubtitle').textContent=maxLoc?`Gayrimenkul hizmetleri · ${maxLoc}`:'Gayrimenkul hizmetleri';
+ document.getElementById('alfaPublicSubtitle').textContent=alfaLoc?`Gayrimenkul hizmetleri · ${alfaLoc}`:'Gayrimenkul hizmetleri';
+ document.getElementById('alfaPublicMeta').textContent=alfaLoc;
+}
+['maxPublicSuffix','maxPublicLocation','alfaPublicLocation'].forEach(id=>document.getElementById(id).addEventListener('input',updatePublicNames));
+// Initial rendering for reliable standalone use
+renderStep('max',0);renderStep('alfa',0);updatePublicNames();
+
+
+// v1.2: transaction-scoped roles. These never mutate the account's base type/workspace.
+const roleFlows={
+ sale:{label:'Satış',stages:[
+  ['Hizmet Dosyası açılışı','Mülk Sahibi / Satıcı','Müşteri hesabı → Hizmet Dosyası','Yetki/temsil belgeleri ve hizmet kapsamı ön kontrolü.'],
+  ['İlan ve anlamlı etkileşim','Alıcı Adayı','İlan etkileşim kaydı → Talep/iletişim','Rol yalnız bu ilan/talep bağlamındadır; hesabın kalıcı tipi değişmez.'],
+  ['Gösterim','Alıcı + Satıcı/Mülk Sahibi','Talep + İlan + Gösterim kaydı','Gerekli yer gösterme formu gösterim kaydına ve ilgili taraflara bağlanır.'],
+  ['Taraf mutabakatı','Alıcı + Satıcı','Eşleşme / mutabakat kaydı','Mutabakat kaydedilir; tek başına satışın gerçekleştiği anlamına gelmez.'],
+  ['Satış İşlem Dosyası','Alıcı + Satıcı / temsilciler','İşlem Dosyası + sözleşme/kanıt zinciri','Onaylı sözleşme ve imza/gerçekleşme kanıtlarıyla kapanışa ilerler.']
+ ],rows:[['Hizmet talebi','Mülk Sahibi / Satıcı','Hizmet Dosyası','Müşteri paneli aynı kalır; yetki ve temsil kontrolü gerekir.'],['İlana yanıt','Alıcı Adayı','İlan etkileşimi / Talep Dosyası','Yalnız ilgili ilana/talebe bağlı taraf kaydı.'],['Gösterim','Alıcı + Satıcı/Mülk Sahibi','Gösterim kaydı','Yer gösterme belgesi bu gösterime ve taraflara bağlanır.'],['Satış mutabakatı','Alıcı + Satıcı','Eşleşme + mutabakat','Henüz kapanmış satış değildir.'],['İşlem ve kapanış','Alıcı + Satıcı','İşlem Dosyası','Satış türüne göre onaylı satış sözleşmesi ve gerçekleşme kanıtı.']]},
+ rent:{label:'Kiralama',stages:[
+  ['Hizmet Dosyası açılışı','Mülk Sahibi / Kiraya Veren','Müşteri hesabı → Hizmet Dosyası','Yetki sözleşmesi ve mülke ilişkin yetki/temsil kontrolü.'],
+  ['Kiralık ilan ve anlamlı etkileşim','Kiracı Adayı','İlan etkileşimi → Talep/iletişim','Rol yalnız bu kiralık ilan/talep bağlamında doğar.'],
+  ['Gösterim','Kiracı + Mülk Sahibi/Kiraya Veren','Talep + İlan + Gösterim kaydı','Yer gösterme formu ilgili gösterime bağlanır.'],
+  ['Taraf mutabakatı','Kiracı + Kiraya Veren','Eşleşme / mutabakat kaydı','Varsa kapora/ön ödeme koşulu ve kira depozitosu ayrı tutulur.'],
+  ['Kiralama İşlem Dosyası','Kiracı + Kiraya Veren','İşlem Dosyası + kira sözleşmesi','Kira sözleşmesi, imza kanıtları ve gerekiyorsa teslim/başlangıç kanıtı.']
+ ],rows:[['Hizmet talebi','Mülk Sahibi / Kiraya Veren','Hizmet Dosyası','Mülk sahibi rolü kiracı/satıcı gibi genel kullanıcı rolüne dönüşmez.'],['İlana yanıt','Kiracı Adayı','İlan etkileşimi / Talep Dosyası','Yalnız ilgili kiralık ilan/talebe bağlı.'],['Gösterim','Kiracı + Kiraya Veren','Gösterim kaydı','Yer gösterme belgesi ayrı imza ve kanıt durumuna sahiptir.'],['Mutabakat/ön ödeme','Kiracı + Kiraya Veren','Mutabakat + koşullu ödeme kaydı','Kapora/ön ödeme ile kira depozitosu farklı kalemlerdir.'],['Kiralama ve teslim','Kiracı + Kiraya Veren','İşlem Dosyası','Kira sözleşmesi ve gerekli teslim kanıtı; finans ayrı kayıt.']]},
+ transfer:{label:'Devir',stages:[
+  ['Hizmet Dosyası açılışı','Devreden','Müşteri hesabı → Hizmet Dosyası','Devre konu işletme/hak ve temsil yetkisi doğrulanır.'],
+  ['Devir ilanı ve anlamlı etkileşim','Devir Alan Adayı','İlan etkileşimi / Talep kaydı','Rol yalnız ilgili devir ilanı ve dosyası için tutulur.'],
+  ['İnceleme / görüşme','Devreden + Devir Alan Adayı','Görev/görüşme ve dosya belgeleri','Gerekli bilgi paylaşımı kontrollü ve kayıtlı yapılır.'],
+  ['Taraf mutabakatı','Devreden + Devir Alan','Mutabakat kaydı','Kapora/ön ödeme yalnız anlaşma ve onaylı kurala göre izlenir.'],
+  ['Devir İşlem Dosyası','Devreden + Devir Alan / temsilciler','İşlem Dosyası + devir sözleşmesi','Devir alt türünün koşulları, imza ve gerçekleşme kanıtları tamamlanır.']
+ ],rows:[['Hizmet talebi','Devreden','Hizmet Dosyası','Devir konusu ve temsil yetkisi kayda bağlanır.'],['İlana yanıt','Devir Alan Adayı','İlan etkileşimi / Talep','Kalıcı User.role olmaz.'],['İnceleme','Devreden + Devir Alan Adayı','Görev / belge listesi','Yetki ve veri paylaşım kapsamı sınırlıdır.'],['Mutabakat','Devreden + Devir Alan','Mutabakat / koşullu kapora','Koşullar onaylı devir türü matrisinden gelir.'],['Devir ve kapanış','Devreden + Devir Alan','İşlem Dosyası','Devir sözleşmesi ve alt türe uygun gerçekleşme kanıtı gerekir.']]}
+};
+function renderRoleFlow(){
+ const type=document.getElementById('roleFlowType').value; const data=roleFlows[type];
+ const roleUser=document.getElementById('roleUserExample').value;
+ const workspace=document.getElementById('roleWorkspaceResult');
+ workspace.textContent=roleUser==='member'?'Üye/Müşteri alanı aynı kalır':roleUser==='broker'?'Üye alanı + aktif ilişkiye göre Broker / Ofis alanı':'Üye alanı + aktif OfficeMembership ile Danışman alanı';
+ document.getElementById('roleFlowStages').innerHTML=data.stages.map((x,i)=>`<div class="role-stage"><div class="num">${String(i+1).padStart(2,'0')}</div><strong>${x[0]}</strong><p><span class="tag role">${x[1]}</span></p><p>${x[2]}</p><p>${x[3]}</p></div>`).join('');
+ document.getElementById('roleMappingRows').innerHTML=data.rows.map(r=>`<tr><td>${r[0]}</td><td><span class="tag role">${r[1]}</span></td><td>${r[2]}</td><td>${r[3]}</td></tr>`).join('');
+}
+const contractTemplates={
+ sale:{label:'Satış',finalTitle:'Satış Vaadi Sözleşmesi',finalNote:'Hukuk onaylı gereklilik matrisi bu işlem için hangi sözleşme türü ve imza standardının kullanılacağını belirler.',parties:{auth:'Mülk Sahibi/Satıcı + yetkili ofis temsilcisi',show:'Alıcı Adayı + yetkili danışman',reserve:'Alıcı + Satıcı/Mülk Sahibi',final:'Alıcı + Satıcı ve gerekiyorsa temsilciler'},payment:'Kapora/ön ödeme kanıtı sözleşmeden ayrı izlenir.'},
+ rent:{label:'Kiralama',finalTitle:'Kiralama (Kira) Sözleşmesi',finalNote:'Kira dönemi, taraflar, bedel, depozito ve teslim maddeleri onaylı sözleşme şablonu ve gereklilik matrisiyle doğrulanır.',parties:{auth:'Mülk Sahibi/Kiraya Veren + yetkili ofis temsilcisi',show:'Kiracı Adayı + yetkili danışman',reserve:'Kiracı + Kiraya Veren (uygulanırsa)',final:'Kiracı + Kiraya Veren ve gerekiyorsa temsilciler'},payment:'Kapora/ön ödeme ile kira depozitosu ayrı kayıt türleridir; birbirine dönüştürülmez.'},
+ transfer:{label:'Devir',finalTitle:'Devir Sözleşmesi',finalNote:'Devir alt türü, taraf, izin ve imza koşulları onaylı alt tür matrisiyle belirlenir.',parties:{auth:'Devreden + yetkili ofis temsilcisi',show:'Bu işlemde yer gösterim yoksa uygulanmaz',reserve:'Devreden + Devir Alan (uygulanırsa)',final:'Devreden + Devir Alan ve gerekiyorsa temsilciler'},payment:'Ön ödeme/kapora ancak anlaşma ve ilgili alt türün onaylı kuralı varsa izlenir.'}
+};
+const contractState={};
+let activeContractType='sale';
+let previousShowingChoice='yes';
+function getContractDefs(type){
+ const t=contractTemplates[type];const hasShow=(document.getElementById('showingApplies')?.value||'yes')==='yes' && type!=='transfer';const hasReserve=(document.getElementById('depositApplies')?.value||'yes')==='yes';
+ const all=[{id:'authority',title:'Yetki Sözleşmesi',stage:'İlan öncesi · Hizmet Dosyası',parties:t.parties.auth,description:'Mülk/işletme üzerinde hizmet verme ve ilan sürecini yürütme yetkisi. İlan yayını öncesindeki kapıdır.',mandatory:true,gate:'Hizmet Dosyası ve taraf/temsil verileri hazır olmalı.'}];
+ if(hasShow)all.push({id:'showing',title:'Yer Gösterme Formu / Belgesi',stage:'İlan sonrası · Her gösterim kaydı için',parties:t.parties.show,description:'Belge belirli gösterim olayına ve katılan taraflara bağlanır. Hazırlanması, taraf imzaları ve kanıt doğrulaması ayrı durumlardır.',mandatory:true,gate:'Yetki sözleşmesi doğrulanmış ve ilan yayında olmalı.'});
+ if(hasReserve)all.push({id:'reserve',title:'Kapora / Ön Ödeme Sözleşmesi',stage:'Taraf mutabakatı sonrası · Koşullu',parties:t.parties.reserve,description:type==='rent'?'Kapora/ön ödeme koşulu ile kira depozitosu birbirinden ayrıdır. Ödeme kanıtı ayrı kayıt olarak izlenir.':'Mutabakatın koşullarını, tutarı, alıcısı ve iade/mahsup şartlarını tanımlayan onaylı belge.',mandatory:true,gate:'Taraf mutabakatı kaydedilmeli; uygulanabilirlik onaylı matristen gelmeli.'});
+ all.push({id:'final',title:t.finalTitle,stage:'İşlem Dosyası · Nihai sözleşme',parties:t.parties.final,description:t.finalNote,mandatory:true,gate:'Taraf/temsil, önceki gerekli sözleşmeler, süreç adımları ve zorunlu belge kontrolleri tamamlanmalı.'});
+ return all;
+}
+function stateFor(type,id){const key=type+':'+id;if(!contractState[key])contractState[key]={status:'NOT_CREATED',paymentStatus:'NOT_APPLICABLE'};return contractState[key]}
+function statusLabel(st){return ({NOT_CREATED:'Henüz oluşturulmadı',DRAFT:'Taslak hazırlandı',SENT:'İmzaya sunuldu',SIGNED:'Taraf imzaları tamamlandı · demo',VERIFIED:'İmza/kanıt kontrol edildi · demo'})[st]||st}
+function contractPrerequisite(type,id,defs){
+ if(id==='authority')return document.getElementById('gateParties').checked;
+ if(id==='showing')return stateFor(type,'authority').status==='VERIFIED' && document.getElementById('listingPublished').checked;
+ if(id==='reserve')return document.getElementById('mutualAgreement').checked && (!defs.some(x=>x.id==='showing')||stateFor(type,'showing').status==='VERIFIED');
+ if(id==='final')return document.getElementById('mutualAgreement').checked && document.getElementById('gateParties').checked && document.getElementById('gateProcess').checked && document.getElementById('gateDocuments').checked && stateFor(type,'authority').status==='VERIFIED' && (!defs.some(x=>x.id==='showing')||stateFor(type,'showing').status==='VERIFIED') && (!defs.some(x=>x.id==='reserve')||(stateFor(type,'reserve').status==='VERIFIED' && stateFor(type,'reserve').paymentStatus==='VERIFIED'));
+ return false;
+}
+function statusButton(type,id,action,label,disabled=false,cls=''){return `<button type="button" class="${cls}" ${disabled?'disabled':''} onclick="advanceContract('${type}','${id}','${action}')">${label}</button>`}
+function renderContracts(reset=false){
+ const type=document.getElementById('contractFlowType').value; activeContractType=type;const t=contractTemplates[type];document.getElementById('contractTypeTag').textContent=t.label+' akışı';
+ const showingControl=document.getElementById('showingApplies');
+ if(type==='transfer'){if(!showingControl.disabled)previousShowingChoice=showingControl.value;showingControl.value='no';showingControl.disabled=true;}else if(showingControl.disabled){showingControl.disabled=false;showingControl.value=previousShowingChoice||'yes';}
+ if(reset){Object.keys(contractState).filter(k=>k.startsWith(type+':')).forEach(k=>delete contractState[k]);}
+ const defs=getContractDefs(type);const html=defs.map((d,i)=>{
+  const st=stateFor(type,d.id);const prior=contractPrerequisite(type,d.id,defs);const locked=!prior;
+  if(d.id==='final'&&type==='sale'){};
+  let buttons='';
+  if(st.status==='NOT_CREATED')buttons=statusButton(type,d.id,'draft','Taslak oluştur',locked,'primary');
+  else if(st.status==='DRAFT')buttons=statusButton(type,d.id,'send','İmzaya sun',false,'primary')+statusButton(type,d.id,'reset','Taslağı sıfırla',false,'ghost');
+  else if(st.status==='SENT')buttons=statusButton(type,d.id,'sign','Demo: taraf imzalarını tamamla',false,'gold');
+  else if(st.status==='SIGNED')buttons=statusButton(type,d.id,'verify','Demo: imza/kanıtı kontrol edildi',false,'primary');
+  else buttons=`<span class="tag green">Doğrulandı</span>`+ (d.id==='reserve'?`<div style="width:100%;margin-top:6px">${statusButton(type,d.id,'payment',st.paymentStatus==='RECORDED'?'Demo: ödeme kanıtını doğrula':'Demo ödeme kanıtını kaydet',st.paymentStatus==='VERIFIED','ghost')}</div>`:'');
+  const stClass=st.status==='VERIFIED'?'verified':locked?'locked':'';
+  return `<article class="contract-card ${stClass}"><div class="cardhead"><div><span class="tag ${st.status==='VERIFIED'?'green':locked?'':'gold'}">${d.stage}</span><h3>${d.title}</h3><div class="contract-meta">Taraflar: ${d.parties}</div></div><div class="contract-status ${st.status==='VERIFIED'?'verified':locked?'locked':''}">${statusLabel(st.status)}</div></div><p class="sub" style="margin-top:11px">${d.description}</p><div class="mini-rule"><b>Ön koşul:</b> ${d.gate}</div>${locked?'<div class="mini-rule warning">Bu adım, önceki kapılar tamamlanana kadar kilitlidir.</div>':''}${d.id==='reserve'&&st.status==='VERIFIED'?`<div class="mini-rule">Ödeme durumu: <b>${st.paymentStatus==='VERIFIED'?'Ödeme kanıtı doğrulandı · demo':st.paymentStatus==='RECORDED'?'Ödeme kanıtı kaydedildi · doğrulama bekliyor':'Ödeme kaydı yok'}</b></div>`:''}<div class="contract-actions">${buttons}</div></article>`;
+ }).join('');
+ document.getElementById('contractList').innerHTML=html;
+ updateClosureState();
+}
+function advanceContract(type,id,action){
+ const st=stateFor(type,id);const defs=getContractDefs(type);const def=defs.find(x=>x.id===id);if(!def)return;
+ if(!contractPrerequisite(type,id,defs)){toast('Ön koşullar tamamlanmadan bu sözleşme adımı açılamaz.');return;}
+ if(action==='draft')st.status='DRAFT';
+ if(action==='send'&&st.status==='DRAFT')st.status='SENT';
+ if(action==='sign'&&st.status==='SENT')st.status='SIGNED';
+ if(action==='verify'&&st.status==='SIGNED')st.status='VERIFIED';
+ if(action==='reset'){st.status='NOT_CREATED';st.paymentStatus='NOT_APPLICABLE';}
+ if(action==='payment'&&st.status==='VERIFIED'){st.paymentStatus=st.paymentStatus==='NOT_APPLICABLE'?'RECORDED':'VERIFIED';}
+ renderContracts();
+ toast(action==='sign'?'Demo imza durumu değişti; gerçek elektronik imza değildir.':action==='verify'?'Demo kanıt kontrolü tamamlandı; gerçek hukuki doğrulama değildir.':action==='payment'?'Demo ödeme kanıtı durumu güncellendi; gerçek tahsilat yapılmadı.':'Demo sözleşme adımı güncellendi.');
+}
+function updateClosureState(){
+ const type=document.getElementById('contractFlowType').value;const defs=getContractDefs(type);
+ const authorityVerified=stateFor(type,'authority').status==='VERIFIED';
+ const listingControl=document.getElementById('listingPublished');
+ listingControl.disabled=!authorityVerified;
+ if(!authorityVerified)listingControl.checked=false;
+ const showRequired=defs.some(d=>d.id==='showing');
+ const showingVerified=!showRequired||stateFor(type,'showing').status==='VERIFIED';
+ const mutualControl=document.getElementById('mutualAgreement');
+ mutualControl.disabled=!(authorityVerified&&listingControl.checked&&showingVerified);
+ if(mutualControl.disabled)mutualControl.checked=false;
+ const complete=defs.every(d=>stateFor(type,d.id).status==='VERIFIED' && (d.id!=='reserve'||stateFor(type,d.id).paymentStatus==='VERIFIED'));
+ const checks=['gateParties','gateProcess','gateDocuments','gateExecution'].map(id=>document.getElementById(id).checked);const good=complete&&checks.every(Boolean);const done=(checks.filter(Boolean).length+(complete?1:0));const total=5;document.getElementById('closureProgress').style.width=(done/total*100)+'%';
+ document.getElementById('contractGateText').textContent=complete?'Bu akıştaki gerekli sözleşmeler doğrulandı (demo).':'Gerekli sözleşmelerin taslak, taraf imzası ve kanıt kontrolü tamamlanmalı.';
+ const box=document.getElementById('closureState');box.classList.toggle('ready',good);box.textContent=good?'Demo kontrolü: işlem dosyası kapanış koşullarını karşılıyor.':'Kapanışa hazır değil. Taraflar, süreç, belgeler, tüm gerekli sözleşmeler ve gerçekleşme kanıtı tamamlanmalı.';
+ document.getElementById('closeTransactionDemo').disabled=!good;
+}
+function resetContractDemo(){const type=document.getElementById('contractFlowType').value;Object.keys(contractState).filter(k=>k.startsWith(type+':')).forEach(k=>delete contractState[k]);document.getElementById('listingPublished').checked=false;document.getElementById('mutualAgreement').checked=false;document.getElementById('gateParties').checked=true;document.getElementById('gateProcess').checked=false;document.getElementById('gateDocuments').checked=false;document.getElementById('gateExecution').checked=false;renderContracts();toast('Seçili işlem akışının demo durumu sıfırlandı.')}
+document.getElementById('roleFlowType').addEventListener('change',renderRoleFlow);document.getElementById('roleUserExample').addEventListener('change',renderRoleFlow);
+document.getElementById('contractFlowType').addEventListener('change',()=>{document.getElementById('listingPublished').checked=false;document.getElementById('mutualAgreement').checked=false;document.getElementById('gateParties').checked=true;document.getElementById('gateProcess').checked=false;document.getElementById('gateDocuments').checked=false;document.getElementById('gateExecution').checked=false;renderContracts()});
+['showingApplies','depositApplies'].forEach(id=>document.getElementById(id).addEventListener('change',()=>renderContracts()));
+['gateParties','gateProcess','gateDocuments','gateExecution'].forEach(id=>document.getElementById(id).addEventListener('change',()=>{renderContracts()}));
+document.getElementById('closeTransactionDemo').addEventListener('click',()=>{updateClosureState();if(!document.getElementById('closeTransactionDemo').disabled){toast('Demo: İşlem Dosyası kapanışa uygun. Gerçek kayıt oluşturulmadı.')}});
+// insert process controls into the contract page before rendering its cards
+const contractHeader=document.querySelector('#contract-gates .contract-layout > .gate-panel');
+const gateControlHTML=`<label class="gate-check"><input type="checkbox" id="listingPublished"><span><b>İlan yayın uygunluğu tamam</b><br>Yetki sözleşmesi doğrulanmış ve mülk/portföy/ilan adımları kontrol edilmiş.</span></label><label class="gate-check"><input type="checkbox" id="mutualAgreement"><span><b>Taraf mutabakatı kaydedildi</b><br>Bu kayıt, tek başına işlem kapanışı değildir.</span></label><div class="contract-actions"><button class="ghost" type="button" onclick="resetContractDemo()">Bu akışı sıfırla</button></div>`;
+contractHeader.querySelector('p.sub').insertAdjacentHTML('afterend',gateControlHTML);
+['listingPublished','mutualAgreement'].forEach(id=>document.getElementById(id).addEventListener('change',()=>renderContracts()));
+renderRoleFlow();renderContracts();
+
+</script>
+</body>
+</html>
